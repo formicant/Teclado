@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{573F5371-6FF3-4E38-9A94-314B25DEB95A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Teclado.Processing</RootNamespace>
+    <AssemblyName>Teclado.Processing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualInputProcessing.cs" />
+    <Compile Include="InputEvents\BackspaceInputEvent.cs" />
+    <Compile Include="InputEvents\InputEvent.cs" />
+    <Compile Include="InputEvents\MouseButtonDownUpInputEvent.cs" />
+    <Compile Include="InputEvents\MouseButtonInputEvent.cs" />
+    <Compile Include="InputEvents\MouseWheelInputEvent.cs" />
+    <Compile Include="InputEvents\ScancodeCombinationInputEvent.cs" />
+    <Compile Include="InputEvents\ScancodeDownUpInputEvent.cs" />
+    <Compile Include="InputEvents\ScancodeInputEvent.cs" />
+    <Compile Include="InputEvents\TextInputEvent.cs" />
+    <Compile Include="InputEvents\VirtKeyDownUpInputEvent.cs" />
+    <Compile Include="InputEvents\VirtKeyInputEvent.cs" />
+    <Compile Include="InputStack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VirtualInputProcessing.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Teclado.Common\Teclado.Common.csproj">
+      <Project>{428b27b1-bdbb-4a5e-84c0-095b6e67cd8d}</Project>
+      <Name>Teclado.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Teclado.WinApi\Teclado.WinApi.csproj">
+      <Project>{0b9fe1a0-0290-47c0-b88f-46e173ed4fca}</Project>
+      <Name>Teclado.WinApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
