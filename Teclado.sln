@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teclado", "Teclado\Teclado.csproj", "{662AB19E-75A4-4B06-9974-B6B67314ADF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teclado.Common", "Teclado.Common\Teclado.Common.csproj", "{428B27B1-BDBB-4A5E-84C0-095B6E67CD8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teclado.Processing", "Teclado.Processing\Teclado.Processing.csproj", "{573F5371-6FF3-4E38-9A94-314B25DEB95A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teclado.WinApi", "Teclado.WinApi\Teclado.WinApi.csproj", "{0B9FE1A0-0290-47C0-B88F-46E173ED4FCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{662AB19E-75A4-4B06-9974-B6B67314ADF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{662AB19E-75A4-4B06-9974-B6B67314ADF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{662AB19E-75A4-4B06-9974-B6B67314ADF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{662AB19E-75A4-4B06-9974-B6B67314ADF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428B27B1-BDBB-4A5E-84C0-095B6E67CD8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428B27B1-BDBB-4A5E-84C0-095B6E67CD8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428B27B1-BDBB-4A5E-84C0-095B6E67CD8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428B27B1-BDBB-4A5E-84C0-095B6E67CD8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{573F5371-6FF3-4E38-9A94-314B25DEB95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573F5371-6FF3-4E38-9A94-314B25DEB95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573F5371-6FF3-4E38-9A94-314B25DEB95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573F5371-6FF3-4E38-9A94-314B25DEB95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9FE1A0-0290-47C0-B88F-46E173ED4FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9FE1A0-0290-47C0-B88F-46E173ED4FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9FE1A0-0290-47C0-B88F-46E173ED4FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9FE1A0-0290-47C0-B88F-46E173ED4FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
