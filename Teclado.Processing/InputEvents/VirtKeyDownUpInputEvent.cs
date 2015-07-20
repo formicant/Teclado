@@ -15,12 +15,10 @@ namespace Teclado.Processing.InputEvents
 			VirtKey = virtKey;
 		}
 
-		public VirtKey VirtKey { get; private set; }
+		public VirtKey VirtKey { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new VirtKeyDownUpInputEvent(KeyState, layout, VirtKey);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new VirtKeyDownUpInputEvent(KeyState, layout, VirtKey);
 
 		public override void Send()
 		{

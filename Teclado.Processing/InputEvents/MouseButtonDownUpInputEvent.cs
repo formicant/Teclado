@@ -15,12 +15,10 @@ namespace Teclado.Processing.InputEvents
 			MouseButton = mouseButton;
 		}
 
-		public MouseButton MouseButton { get; private set; }
+		public MouseButton MouseButton { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new MouseButtonDownUpInputEvent(KeyState, layout, MouseButton);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new MouseButtonDownUpInputEvent(KeyState, layout, MouseButton);
 
 		public override void Send()
 		{

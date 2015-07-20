@@ -15,12 +15,10 @@ namespace Teclado.Processing.InputEvents
 			Count = count;
 		}
 
-		public int Count { get; private set; }
+		public int Count { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new BackspaceInputEvent(KeyState, layout, Count);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new BackspaceInputEvent(KeyState, layout, Count);
 
 		public override void Send()
 		{

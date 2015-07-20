@@ -1,11 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Formicant
 {
 	public static partial class StringOperationExtensions
 	{
+		public static string ToTitleCase(this string str)
+		{
+			return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
+		}
+
+		public static string ToTitleCase(this string str, CultureInfo culture)
+		{
+			return culture.TextInfo.ToTitleCase(str);
+		}
+
+		public static string ToTitleCaseInvariant(this string str)
+		{
+			return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(str);
+		}
+
 		public static string StringJoin<T>(this IEnumerable<T> items, string separator = "")
 		{
 			if(items.IsNull())

@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,6 +110,10 @@
     <ProjectReference Include="..\Teclado.Common\Teclado.Common.csproj">
       <Project>{428b27b1-bdbb-4a5e-84c0-095b6e67cd8d}</Project>
       <Name>Teclado.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Teclado.Parsing\Teclado.Parsing.csproj">
+      <Project>{fae338ef-194b-44e5-a1ef-e7b9a48a205d}</Project>
+      <Name>Teclado.Parsing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Teclado.Processing\Teclado.Processing.csproj">
       <Project>{573f5371-6ff3-4e38-9a94-314b25deb95a}</Project>

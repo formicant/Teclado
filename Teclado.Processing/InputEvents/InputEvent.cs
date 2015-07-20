@@ -8,7 +8,7 @@ namespace Teclado.Processing.InputEvents
 {
 	public abstract class InputEvent
 	{
-		public InputEvent(KeyState keyState, Layout layout)
+		protected InputEvent(KeyState keyState, Layout layout)
 		{
 			KeyState = keyState;
 			Layout = layout;

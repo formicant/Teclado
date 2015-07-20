@@ -16,14 +16,12 @@ namespace Teclado.Processing.InputEvents
 			_scancodes = scancodes.ToList();
 		}
 
-		public IEnumerable<Scancode> Scancodes { get { return _scancodes; } }
+		public IEnumerable<Scancode> Scancodes => _scancodes;
 
 		readonly List<Scancode> _scancodes;
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new ScancodeCombinationInputEvent(KeyState, layout, Scancodes);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new ScancodeCombinationInputEvent(KeyState, layout, Scancodes);
 
 		public override void Send()
 		{

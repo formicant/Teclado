@@ -27,10 +27,8 @@ namespace Teclado.WinApi
 			return layoutIds.Select(l => new Layout((uint)l)).ToList();
 		}
 
-		public static Layout GetCurrentLayout()
-		{
-			return new Layout(GetKeyboardLayout(GetWindowThreadProcessId(GetForegroundWindow())));
-		}
+		public static Layout GetCurrentLayout() =>
+			new Layout(GetKeyboardLayout(GetWindowThreadProcessId(GetForegroundWindow())));
 
 		public static void ChangeCurrentLayout(Layout layout)
 		{

@@ -16,31 +16,23 @@ namespace Teclado.Common
 
 		#region Equality
 
-		public bool Equals(Layout other)
-		{
-			return Id.Equals(other.Id);
-		}
+		public bool Equals(Layout other) =>
+			Id.Equals(other.Id);
 
-		public override bool Equals(object obj)
-		{
-			return obj is Layout && Equals((Layout)obj);
-		}
+		public override bool Equals(object obj) =>
+			obj is Layout && Equals((Layout)obj);
 
-		public override int GetHashCode()
-		{
-			return Id.GetHashCode();
-		}
+		public override int GetHashCode() =>
+			Id.GetHashCode();
 
-		public static bool operator ==(Layout sc1, Layout sc2)
-		{
-			return sc1.Equals(sc2);
-		}
+		public static bool operator ==(Layout sc1, Layout sc2) =>
+			sc1.Equals(sc2);
 
-		public static bool operator !=(Layout sc1, Layout sc2)
-		{
-			return !sc1.Equals(sc2);
-		}
+		public static bool operator !=(Layout sc1, Layout sc2) =>
+			!sc1.Equals(sc2);
 
 		#endregion
+
+		public override string ToString() => Id.ToString();
 	}
 }

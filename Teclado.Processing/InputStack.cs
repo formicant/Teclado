@@ -15,7 +15,7 @@ namespace Teclado.Processing
 			_inputEvents.AddLast(inputEvent);
 		}
 
-		LinkedList<InputEvent> _inputEvents = new LinkedList<InputEvent>();
+		readonly LinkedList<InputEvent> _inputEvents = new LinkedList<InputEvent>();
 
 		string _text = "";
 

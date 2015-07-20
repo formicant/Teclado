@@ -15,12 +15,10 @@ namespace Teclado.Processing.InputEvents
 			Text = text;
 		}
 
-		public string Text { get; private set; }
+		public string Text { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new TextInputEvent(KeyState, layout, Text);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new TextInputEvent(KeyState, layout, Text);
 
 		public override void Send()
 		{

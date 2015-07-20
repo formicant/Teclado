@@ -16,13 +16,11 @@ namespace Teclado.Processing.InputEvents
 			VirtKey = virtKey;
 		}
 
-		public Scancode Scancode { get; private set; }
-		public VirtKey VirtKey { get; private set; }
+		public Scancode Scancode { get; }
+		public VirtKey VirtKey { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new ScancodeDownUpInputEvent(KeyState, layout, Scancode, VirtKey /* Consider to use VirtKey.None here! */);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new ScancodeDownUpInputEvent(KeyState, layout, Scancode, VirtKey /* Consider using VirtKey.None here! */);
 
 		public override void Send()
 		{

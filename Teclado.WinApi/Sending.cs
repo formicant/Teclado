@@ -66,12 +66,10 @@ namespace Teclado.WinApi
 			}
 		}
 
-		static InputStruct GetUnicodeInputStruct(bool down, char @char)
-		{
-			return GetKeyboardInputStruct(
+		static InputStruct GetUnicodeInputStruct(bool down, char @char) =>
+			GetKeyboardInputStruct(
 				KeyboardEventFlags.Unicode | (!down).Then(KeyboardEventFlags.KeyUp),
 				(ushort)@char);
-		}
 
 		static IEnumerable<InputStruct> GetKeyDownUpInputStruct(Scancode scancode, VirtKey virtKey)
 		{
@@ -79,13 +77,11 @@ namespace Teclado.WinApi
 			yield return GetKeyInputStruct(false, scancode, virtKey);
 		}
 
-		static InputStruct GetKeyInputStruct(bool down, Scancode scancode, VirtKey virtKey)
-		{
-			return GetKeyboardInputStruct(
+		static InputStruct GetKeyInputStruct(bool down, Scancode scancode, VirtKey virtKey) =>
+			GetKeyboardInputStruct(
 				virtKey.IsNone.Then(KeyboardEventFlags.Scancode) | ((scancode.Code & 0x80) != 0).Then(KeyboardEventFlags.ExtendedKey) | (!down).Then(KeyboardEventFlags.KeyUp),
 				(ushort)(scancode.Code & 0x7F | (down ? 0 : 0x80)),
 				(ushort)virtKey.Code);
-		}
 
 		static IEnumerable<InputStruct> GetMouseButtonDownUpInputStruct(MouseButton button)
 		{
@@ -101,16 +97,13 @@ namespace Teclado.WinApi
 				xButton);
 		}
 
-		static InputStruct GetMouseWheelInputStruct(int wheelAmount)
-		{
-			return GetMouseInputStruct(
+		static InputStruct GetMouseWheelInputStruct(int wheelAmount) =>
+			GetMouseInputStruct(
 				MouseEventFlags.Wheel,
 				wheelAmount * WheelDelta);
-		}
 
-		static MouseEventFlags GetMouseEventFlags(bool down, MouseButton mouseButton)
-		{
-			return (MouseEventFlags)(
+		static MouseEventFlags GetMouseEventFlags(bool down, MouseButton mouseButton) =>
+			(MouseEventFlags)(
 				(uint)(
 					mouseButton.HasFlag(MouseButton.Left).Then(MouseEventFlags.LeftDown) |
 					mouseButton.HasFlag(MouseButton.Right).Then(MouseEventFlags.RightDown) |
@@ -118,11 +111,9 @@ namespace Teclado.WinApi
 					mouseButton.HasFlag(MouseButton.XButton1).Then(MouseEventFlags.XDown) |
 					mouseButton.HasFlag(MouseButton.XButton2).Then(MouseEventFlags.XDown))
 				<< (down ? 0 : 1));
-		}
 
-		static InputStruct GetKeyboardInputStruct(KeyboardEventFlags flags, ushort scancode = 0, ushort virtKey = 0)
-		{
-			return new InputStruct
+		static InputStruct GetKeyboardInputStruct(KeyboardEventFlags flags, ushort scancode = 0, ushort virtKey = 0) =>
+			new InputStruct
 			{
 				Type = SendInputEventType.Keyboard,
 				InputUnion = new MouseKeyboardHardwareInputUnion
@@ -135,11 +126,9 @@ namespace Teclado.WinApi
 					}
 				}
 			};
-		}
 
-		static InputStruct GetMouseInputStruct(MouseEventFlags flags, int mouseData = 0, Point point = default(Point))
-		{
-			return new InputStruct
+		static InputStruct GetMouseInputStruct(MouseEventFlags flags, int mouseData = 0, Point point = default(Point)) =>
+			new InputStruct
 			{
 				Type = SendInputEventType.Mouse,
 				InputUnion = new MouseKeyboardHardwareInputUnion
@@ -152,7 +141,6 @@ namespace Teclado.WinApi
 					}
 				}
 			};
-		}
 
 		static void SendInputStructs(IEnumerable<InputStruct> inputStructs)
 		{

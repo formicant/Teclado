@@ -16,13 +16,11 @@ namespace Teclado.Processing.InputEvents
 			VirtKey = virtKey;
 		}
 
-		public bool Down { get; private set; }
-		public VirtKey VirtKey { get; private set; }
+		public bool Down { get; }
+		public VirtKey VirtKey { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new VirtKeyInputEvent(KeyState, layout, Down, VirtKey);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new VirtKeyInputEvent(KeyState, layout, Down, VirtKey);
 
 		public override void Send()
 		{

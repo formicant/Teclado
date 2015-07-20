@@ -15,12 +15,10 @@ namespace Teclado.Processing.InputEvents
 			WheelAmount = wheelAmount;
 		}
 
-		public int WheelAmount { get; private set; }
+		public int WheelAmount { get; }
 
-		public override InputEvent ChangeLayout(Layout layout)
-		{
-			return new MouseWheelInputEvent(KeyState, layout, WheelAmount);
-		}
+		public override InputEvent ChangeLayout(Layout layout) =>
+			new MouseWheelInputEvent(KeyState, layout, WheelAmount);
 
 		public override void Send()
 		{
